@@ -1,3 +1,4 @@
+import 'package:bottom_navigation_bar/widgets/custom_bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class OrganicScreen extends StatefulWidget {
