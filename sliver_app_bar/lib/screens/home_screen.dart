@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sliver_app_bar/image_carousel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,15 +14,47 @@ class HomeScreen extends StatelessWidget {
           SliverAppBar(
             backgroundColor: Colors.deepPurple,
             foregroundColor: Colors.white,
-            leading: const Icon(Icons.menu),
+            // leading: const Icon(Icons.menu),
+            leading: IconButton(
+              onPressed: () {
+                Drawer(
+                  child: Container(
+                    color: Colors.indigo,
+                    child: ListView(
+                      children: const [
+                        DrawerHeader(
+                          child: Icon(
+                            Icons.home,
+                            size: 30,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.menu),
+            ),
             actions: const [
-              Icon(Icons.notifications, size: 20,),
+              Icon(
+                Icons.notifications,
+                size: 20,
+              ),
               SizedBox(width: 8),
-              Icon(Icons.search, size: 20,),
+              Icon(
+                Icons.search,
+                size: 20,
+              ),
               SizedBox(width: 8),
-              Icon(Icons.favorite, size: 20,),
+              Icon(
+                Icons.favorite,
+                size: 20,
+              ),
               SizedBox(width: 8),
-              Icon(Icons.shopping_cart, size: 20,),
+              Icon(
+                Icons.shopping_cart,
+                size: 20,
+              ),
               SizedBox(width: 8),
             ],
             title: const Text('Dashboard'),
